@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>KnowBloom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SVG favicon (modern browsers) -->
+  <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml" /> -->
+
+  <!-- PNG fallback icons at explicit sizes -->
+  <link rel="icon" href="/icon.svg" sizes="64x64" type="image/svg+xml" />
+  <!-- <link rel="icon" href="/icon.svg" sizes="64x64" type="image/svg+xml" /> -->
+
+  <!-- optional: classic .ico for wider legacy support -->
+  <link rel="alternate icon" href="/favicon.ico" />
+
+  <!-- Theme detection script -->
+  <script>
+    (() => {
+      const storageKey = "vite-ui-theme";
+      const theme = localStorage.getItem(storageKey);
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (
+        theme === "dark" ||
+        (!theme && prefersDark) ||
+        (theme === "system" && prefersDark)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.add("light");
+      }
+    })();
+  </script>
+
+  <!-- Razorpay checkout -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
